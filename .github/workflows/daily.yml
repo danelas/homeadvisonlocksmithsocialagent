@@ -1,0 +1,109 @@
+name: Daily Social Post
+
+on:
+  schedule:
+    # 14:00 UTC = 10 AM EDT / 9 AM EST. Tuesday + Thursday + Saturday is the
+    # sweet-spot cadence for local services. Adjust days if you want
+    # more/less.
+    - cron: "0 14 * * 2,4,6"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (don't actually post)"
+        required: false
+        default: "false"
+        type: choice
+        options: ["true", "false"]
+
+permissions:
+  contents: write   # so the workflow can commit state.json back to the repo
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Check secrets
+        env:
+          UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+          UPLOAD_POST_USER: ${{ secrets.UPLOAD_POST_USER }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          missing=0
+          for v in UPLOAD_POST_API_KEY UPLOAD_POST_USER; do
+            val="${!v}"
+            if [ -z "$val" ]; then
+              echo "::error::Required secret $v is empty or not set"
+              missing=1
+            else
+              echo "OK: $v is set (len=${#val})"
+            fi
+          done
+          # Optional, but each unblocks a target platform:
+          #   FACEBOOK_PAGE_ID  → required to post to Facebook
+          #   GBP_LOCATION_ID   → required to post to Google Business (multi-location)
+          #   OPENAI_API_KEY    → required for media.source: "ai" posts
+          for v in FACEBOOK_PAGE_ID GBP_LOCATION_ID OPENAI_API_KEY; do
+            val="${!v}"
+            if [ -z "$val" ]; then
+              echo "::warning::Optional secret $v not set"
+            else
+              echo "OK: $v is set"
+            fi
+          done
+          [ "$missing" = "0" ] || exit 1
+
+      - name: Run agent
+        env:
+          UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+          UPLOAD_POST_USER: ${{ secrets.UPLOAD_POST_USER }}
+          UPLOAD_POST_EXPECTED_HANDLES: ${{ secrets.UPLOAD_POST_EXPECTED_HANDLES }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            npm run post:dry
+          else
+            npm run post
+          fi
+
+      - name: Commit state.json
+        # always() so we still commit state when the agent THREW. Critical:
+        # if a per-platform failure (FB not connected, IG token expired,
+        # GBP location wrong) causes the agent to throw, we still want to
+        # record the attempt so the same post isn't generated again next run.
+        if: ${{ always() && github.event.inputs.dry_run != 'true' }}
+        run: |
+          if [ -n "$(git status --porcelain state.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state.json
+            git commit -m "chore: update state after post run [skip ci]"
+            git push
+          else
+            echo "No state changes to commit."
+          fi
+
+      - name: Upload preview artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-${{ github.run_id }}
+          path: preview/
+          retention-days: 14
+          if-no-files-found: ignore
