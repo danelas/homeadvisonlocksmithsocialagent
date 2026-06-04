@@ -19,13 +19,17 @@ import type { Post } from "../lib/types.ts";
 
 const BRAND = {
   name: "Home Advisor Locksmith",
-  phone: "(000) 000-0000",          // REPLACE_ME
-  license: "REPLACE_ME",            // state locksmith license #, if applicable
+  phone: "(786) 777-9529",
+  license: "",                      // state locksmith license # — fill to show "Lic #..." in captions
   promo: "LOCK25",                  // promo code mentioned in captions
   // Default platforms for every post. GBP location is chosen via the
   // GBP_LOCATION_ID env var (one location per run), not here.
   platforms: ["instagram", "facebook", "google_business"] as const,
 };
+
+// Only show the license line once you've filled BRAND.license — avoids
+// posting a placeholder publicly.
+const LICENSE_SUFFIX = BRAND.license ? ` — Lic #${BRAND.license}` : "";
 
 const COMMON_HASHTAGS = [
   "locksmith",
@@ -53,7 +57,7 @@ export const POSTS: Post[] = [
 We're ${BRAND.name} — your 24/7 mobile locksmith.
 We answer the phone day or night (yes, including holidays).
 Homes · Cars · Businesses · Rekeys · Lockouts · Smart locks.
-Licensed, bonded & insured — Lic #${BRAND.license}.
+Licensed, bonded & insured${LICENSE_SUFFIX}.
 
 🎁 FREE service call with any job — mention ${BRAND.promo}
 ☎️ ${BRAND.phone}
