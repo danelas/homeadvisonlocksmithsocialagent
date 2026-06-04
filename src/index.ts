@@ -2,135 +2,90 @@ import dotenv from "dotenv";
 dotenv.config({ override: true });
 
 import { resolve } from "node:path";
-import { writeFile, mkdir, access } from "node:fs/promises";
-import { POSTS } from "./content/posts.ts";
-import { loadState, hasPublished, recordPublish, saveState } from "./lib/state.ts";
+import { SERVICES, BRAND } from "./content/services.ts";
+import { loadState, recordPublish, saveState } from "./lib/state.ts";
 import { postImage } from "./lib/uploadpost.ts";
 import { generateImage } from "./lib/image.ts";
-import { overlayLogo, brandedPathFor, logoExists } from "./lib/logo.ts";
-import type { Post, Platform, PublishedRecord } from "./lib/types.ts";
+import { composeFlyer } from "./lib/flyer.ts";
+import type { Service, PublishedRecord } from "./lib/types.ts";
 
 const DRY_RUN = process.argv.includes("--dry-run");
 const PRINT_NEXT = process.argv.includes("--print-next");
 
-const ASSETS_DIR = resolve(process.cwd(), "assets");
 const PREVIEW_DIR = resolve(process.cwd(), "preview");
 
-function captionFor(post: Post, platform: Platform): string {
-  const override = post.perPlatform?.[platform];
-  const body = override?.caption ?? post.caption;
-  const tags = override?.hashtags ?? post.hashtags;
-  return `${body}\n\n${tags.map((h) => `#${h}`).join(" ")}`;
+function captionFor(service: Service): string {
+  const tags = service.hashtags.map((h) => `#${h}`).join(" ");
+  return `${service.caption}\n\n📞 ${BRAND.phoneDisplay} · FREE service call with any job — mention ${BRAND.promo}\n\n${tags}`;
 }
 
-async function pathExists(p: string): Promise<boolean> {
-  try { await access(p); return true; } catch { return false; }
-}
-
-async function resolveMedia(post: Post): Promise<string> {
-  const m = post.media;
-  if (m.source === "asset") {
-    const path = resolve(ASSETS_DIR, m.path);
-    if (!(await pathExists(path))) {
-      throw new Error(`Asset not found: assets/${m.path} (referenced by post "${post.id}")`);
-    }
-    return path;
-  }
-
-  if (m.source === "url") {
-    await mkdir(PREVIEW_DIR, { recursive: true });
-    const fileName = `${post.id}.png`;
-    const out = resolve(PREVIEW_DIR, fileName);
-    console.log(`[media] downloading ${m.url} → ${out}`);
-    const resp = await fetch(m.url);
-    if (!resp.ok) throw new Error(`media download failed: ${resp.status}`);
-    const buf = Buffer.from(await resp.arrayBuffer());
-    await writeFile(out, buf);
-    return out;
-  }
-
-  if (m.source === "ai") {
-    if (!process.env.OPENAI_API_KEY) {
-      throw new Error(
-        `Post "${post.id}" needs AI image generation but OPENAI_API_KEY is not set. ` +
-          `Either add the key or replace media.source with "asset" pointing at a manual file in /assets.`
-      );
-    }
-    return await generateImage(m.prompt, `${post.id}.png`, m.size ?? "1024x1024");
-  }
-
-  throw new Error(`Unsupported media source for post "${post.id}"`);
+/**
+ * Rotate through the service catalog. The Nth post (by published count) maps to
+ * SERVICES[N % length], so the agent cycles through every job type forever —
+ * it never "runs out", and each run generates a brand-new background image.
+ */
+function pickService(publishedCount: number): { service: Service; runIndex: number } {
+  const runIndex = publishedCount;
+  const service = SERVICES[runIndex % SERVICES.length];
+  return { service, runIndex };
 }
 
 async function main(): Promise<void> {
   console.log(`[agent] dry-run=${DRY_RUN} print-next=${PRINT_NEXT}`);
 
   const state = await loadState();
-  console.log(`[agent] state: ${state.published.length} posts already published`);
+  console.log(`[agent] state: ${state.published.length} flyers posted so far`);
 
-  const next = POSTS.find((p) => !hasPublished(state, p.id));
-  if (!next) {
-    console.log("[agent] no posts left in the queue — add more to src/content/posts.ts");
-    return;
-  }
-  console.log(`[agent] next post: ${next.id} (${next.title})`);
-  console.log(`[agent] platforms: ${next.platforms.join(", ")}`);
+  const { service, runIndex } = pickService(state.published.length);
+  const id = `${service.id}-${String(runIndex).padStart(3, "0")}`;
+  console.log(`[agent] next service: ${service.id} (run #${runIndex}) → "${service.headline.join(" ")}"`);
+  console.log(`[agent] platforms: ${BRAND.platforms.join(", ")}`);
 
   if (PRINT_NEXT) {
     console.log("---");
-    console.log(captionFor(next, "instagram"));
+    console.log(captionFor(service));
     console.log("---");
     return;
   }
 
-  const rawMediaPath = await resolveMedia(next);
-  console.log(`[agent] media generated: ${rawMediaPath}`);
+  // 1) AI generates ONLY the photo background.
+  const bgPath = await generateImage(service.bgPrompt, `${id}-bg.png`, "1024x1024");
+  console.log(`[agent] background generated: ${bgPath}`);
 
-  // Brand every image with the Home Advisor Locksmith logo unless the post
-  // opts out — or unless no logo file exists yet (drop one at assets/logo.jpg).
-  let mediaPath = rawMediaPath;
-  if (next.skipLogo) {
-    console.log(`[agent] skipLogo=true — posting raw image unbranded`);
-  } else if (!logoExists()) {
-    console.warn(
-      `[agent] no logo at assets/logo.jpg — posting unbranded. Drop your logo there to brand every image.`
-    );
-  } else {
-    const brandedPath = brandedPathFor(rawMediaPath, PREVIEW_DIR, next.id);
-    await overlayLogo(rawMediaPath, brandedPath, {
-      corner: next.logoCorner ?? "bottom-right",
-    });
-    console.log(`[agent] branded: ${brandedPath}`);
-    mediaPath = brandedPath;
-  }
+  // 2) Composite the branded flyer (logo + headline + bullets + CALL NOW bar).
+  const flyerPath = resolve(PREVIEW_DIR, `${id}-flyer.jpg`);
+  await composeFlyer(bgPath, flyerPath, {
+    headline: service.headline,
+    subhead: service.subhead,
+    bullets: service.bullets,
+    area: BRAND.area,
+    phone: BRAND.phone,
+    tagline: BRAND.tagline,
+  });
+  console.log(`[agent] flyer composed: ${flyerPath}`);
+
+  const caption = captionFor(service);
 
   if (DRY_RUN) {
-    console.log(`[agent] dry-run — would post to ${next.platforms.join("+")}, captions below:`);
-    for (const platform of next.platforms) {
-      console.log(`\n[${platform}]\n${captionFor(next, platform)}\n`);
-    }
+    console.log(`[agent] dry-run — flyer saved to ${flyerPath}, not posting.`);
+    console.log("---\n" + caption + "\n---");
     return;
   }
 
-  // Upload-Post handles multiple platforms in a single call. We use the same
-  // caption across IG / FB / Google Business to keep the call simple. If you
-  // ever need per-platform copy, set post.perPlatform or split into one call
-  // per platform.
-  const caption = captionFor(next, "instagram");
   let record: PublishedRecord;
   try {
     const result = await postImage({
       caption,
-      title: next.title,
-      mediaPath,
-      platforms: next.platforms,
+      title: service.headline.join(" "),
+      mediaPath: flyerPath,
+      platforms: [...BRAND.platforms],
     });
-    record = { id: next.id, at: new Date().toISOString(), result };
-    console.log(`[agent] ✅ posted "${next.id}"`);
+    record = { id, at: new Date().toISOString(), result };
+    console.log(`[agent] ✅ posted "${id}"`);
   } catch (err) {
     const msg = (err as Error).message;
-    console.error(`[agent] ❌ failed to post "${next.id}":`, msg);
-    record = { id: next.id, at: new Date().toISOString(), error: msg };
+    console.error(`[agent] ❌ failed to post "${id}":`, msg);
+    record = { id, at: new Date().toISOString(), error: msg };
   }
 
   const updated = recordPublish(state, record);

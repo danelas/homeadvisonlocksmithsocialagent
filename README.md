@@ -16,9 +16,9 @@ Vercel is connected to this repo and serves the [`site/`](site/) folder (see
 
 # Social Agent
 
-Lightweight social-media posting agent for **Home Advisor Locksmith**. Runs on a
-GitHub Actions cron, picks the next post from a curated content library,
-generates imagery via OpenAI, **composites your logo onto every image**, and
+Social-media posting agent for **Home Advisor Locksmith**. Runs on a daily
+GitHub Actions cron, rotates through the locksmith service catalog, generates a
+photo background via OpenAI, **composites a branded service-ad flyer**, and
 publishes to **Google Business Profile + Instagram + Facebook** via
 [upload-post.com](https://upload-post.com).
 
@@ -27,8 +27,26 @@ Upload-Post safety checks — with one addition: **multi-location Google Busines
 support**. You manage several Google Business Profiles under a single Google
 login, so every GBP post pins itself to a specific location via `gbp_location_id`.
 
-No real photos required — every starter post is AI-generated. Until you drop a
-logo at `assets/logo.jpg`, images post unbranded (the agent warns and continues).
+### Daily service-ad flyers
+
+Each run builds a designed **service-ad flyer** (like a pro locksmith ad):
+a photo background + your logo + a service headline + benefit bullets + a red
+**CALL NOW · (786) 777-9529** bar + a "Serving Miami & Surrounding Areas" badge.
+
+Only the **photo background** is AI-generated — every piece of text, the logo,
+the phone number, and the CTA are composited in code
+([`src/lib/flyer.ts`](src/lib/flyer.ts)), so the branding is always pixel-perfect
+(gpt-image-1 can't reliably render exact text or logos).
+
+The agent **rotates through the service catalog**
+([`src/content/services.ts`](src/content/services.ts)) — car keys, rekey, safes,
+smart locks, lockouts, commercial, broken-key, key fobs, master keys, 24/7,
+mailbox locks — one job type per day, wrapping around forever with a fresh
+background image each time. It never "runs out." Set the cron in
+[`.github/workflows/daily.yml`](.github/workflows/daily.yml) (defaults to daily).
+
+Drop your logo at `assets/logo.jpg`; the area is set via the `SERVICE_AREA` env
+var (defaults to "Miami & Surrounding Areas").
 
 ## Multiple Google Business locations — the key difference
 
@@ -124,26 +142,27 @@ npm run post:next
    Edit `.github/workflows/daily.yml` to change it.
 4. Manual run: **Actions → Daily Social Post → Run workflow** (optional "Dry run").
 
-## Adding / editing posts
+## Adding / editing services
 
-Brand details (name, phone, license, promo code) live in one place — the
-`BRAND` const at the top of [src/content/posts.ts](src/content/posts.ts). Edit
-those once and they flow into every caption. Append new posts to the `POSTS`
-array (unique `id`, never reused):
+Brand details (phone, area, tagline, promo) live in the `BRAND` const at the top
+of [src/content/services.ts](src/content/services.ts). Each entry in the
+`SERVICES` array is one job type the agent rotates through. Add as many as you
+like — order only affects rotation; list a service twice to show it more often:
 
 ```ts
 {
-  id: "promo-summer-2026",
-  title: "Summer 2026 promo",
-  caption: `...your caption here...`,
-  hashtags: [...COMMON_HASHTAGS, "summer"],
-  media: { source: "ai", prompt: "..." },         // or { source: "asset", path: "myphoto.jpg" }
-  platforms: ["instagram", "facebook", "google_business"],
+  id: "lock-rekey",                       // stable id, used in filenames/state
+  headline: ["Rekey", "Service"],         // big flyer headline (1–3 short lines)
+  subhead: "New place? Make old keys stop working.",
+  bullets: ["Enhanced security", "Cost-effective", "Same day"],  // 3 short bullets
+  bgPrompt: "A locksmith rekeying a door lock... No text, no logos...",  // PHOTO only
+  caption: "Just moved in? ...",          // social caption (no prices)
+  hashtags: ["rekey", "homesecurity", "locksmith"],
 },
 ```
 
-⚠️ **Never put prices** ($ amounts, "starting at $X") in captions — pricing
-belongs in DMs / calls / on-site quotes.
+⚠️ The `bgPrompt` must say **no text / words / logos** — all text is drawn by
+the flyer composer, not the AI. And **never put prices** in captions.
 
 ## Safety nets baked in
 
@@ -165,7 +184,8 @@ belongs in DMs / calls / on-site quotes.
 locksmith-social-agent/
 ├── .github/workflows/daily.yml    # cron + workflow
 ├── src/
-│   ├── content/posts.ts           # the post library + BRAND details — main thing you edit
+│   ├── content/services.ts        # the service catalog + BRAND details — main thing you edit
+│   ├── lib/flyer.ts               # composites the branded ad flyer (logo + text + CALL NOW bar)
 │   ├── lib/
 │   │   ├── uploadpost.ts          # Upload-Post API wrapper + safety checks + gbp_location_id
 │   │   ├── locations.ts           # Google Business location lookup
@@ -188,7 +208,7 @@ locksmith-social-agent/
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| "no posts left in queue" | All posts already in `state.json` | Add more to `src/content/posts.ts` |
+| Same service repeats too often | Catalog is short or a service is listed twice | Add more entries to `src/content/services.ts` |
 | `GBP_LOCATION_ID not set` | Posting to Google Business with no location chosen | Run `npm run gbp:locations`, copy a `name` into `GBP_LOCATION_ID` |
 | `google-business/locations lookup failed` / empty list | Google not connected, or scopes stale | Reconnect Google at upload-post.com → Manage Users |
 | `FACEBOOK_PAGE_ID not set` | Posting to FB without a Page ID | Get it from `https://api.upload-post.com/api/uploadposts/facebook/pages?profile=<your_profile>` |

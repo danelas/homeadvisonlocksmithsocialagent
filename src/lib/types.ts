@@ -1,31 +1,23 @@
 export type Platform = "instagram" | "facebook" | "google_business";
 
-export type Media =
-  | { source: "asset"; path: string }           // file relative to /assets
-  | { source: "url"; url: string }              // remote URL (we download it)
-  | { source: "ai"; prompt: string; size?: "1024x1024" | "1024x1536" | "1536x1024" };
-
-export type LogoCorner = "bottom-right" | "bottom-left" | "top-right" | "top-left";
-
-export type Post = {
-  id: string;                                   // stable identifier — never reuse
-  title: string;                                // short label, shown in logs
-  caption: string;                              // body text (no hashtags here)
-  hashtags: string[];                           // appended in the caption per-platform
-  media: Media;
-  platforms: Platform[];
-  /** Skip the auto logo-overlay step for this post (rare — e.g. testing). */
-  skipLogo?: boolean;
-  /** Override where the logo lands. Defaults to bottom-right. */
-  logoCorner?: LogoCorner;
-  /** Optional override of the platform-level captions/hashtag tail. */
-  perPlatform?: Partial<Record<Platform, { caption?: string; hashtags?: string[] }>>;
+// A locksmith service the agent makes a daily ad flyer for. The agent rotates
+// through the catalog (never runs out) — each run generates a FRESH photo
+// background and composites the branded flyer over it.
+export type Service = {
+  id: string;                 // stable identifier (used in filenames/state)
+  /** Headline split into short lines so it never wraps on the flyer. 1–3 lines. */
+  headline: string[];
+  subhead: string;            // one short line under the headline
+  bullets: string[];          // 3 short benefit bullets
+  bgPrompt: string;           // AI prompt for the PHOTO background only (no text)
+  caption: string;            // social caption body (no hashtags)
+  hashtags: string[];         // appended to the caption
 };
 
 export type PublishedRecord = {
   id: string;
-  at: string;                                   // ISO timestamp
-  result?: unknown;                             // raw upload-post response
+  at: string;                 // ISO timestamp
+  result?: unknown;           // raw upload-post response
   error?: string;
 };
 

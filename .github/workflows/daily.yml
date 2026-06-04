@@ -2,10 +2,10 @@ name: Daily Social Post
 
 on:
   schedule:
-    # 14:00 UTC = 10 AM EDT / 9 AM EST. Tuesday + Thursday + Saturday is the
-    # sweet-spot cadence for local services. Adjust days if you want
-    # more/less.
-    - cron: "0 14 * * 2,4,6"
+    # 14:00 UTC = 10 AM EDT / 9 AM EST — one fresh service-ad flyer every day.
+    # The agent rotates through the service catalog so each day covers a
+    # different locksmith job (car keys, rekey, safes, smart locks, ...).
+    - cron: "0 14 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
