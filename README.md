@@ -1,4 +1,20 @@
-# Home Advisor Locksmith — Social Agent
+# Home Advisor Locksmith — Marketing Automation
+
+This repo holds three things that share one brand + logo:
+
+| Part | What it does | Lives in | Deploys to |
+|---|---|---|---|
+| **Website** | Static homepage + `/blog` for Home Advisor Locksmith | [`site/`](site/) | Vercel → https://www.homeadvisorlocksmith.com |
+| **Blog agent** | Drafts one SEO-optimized article/day via Claude, generates a hero image, writes it into `site/blog/` (Vercel auto-deploys) | [`blog/`](blog/) | GitHub Actions (daily 9 AM ET) |
+| **Social agent** | Posts to Google Business + Instagram + Facebook via upload-post.com | repo root (`src/`) | GitHub Actions (Tue/Thu/Sat) |
+
+Vercel is connected to this repo and serves the [`site/`](site/) folder (see
+[`vercel.json`](vercel.json)). The blog agent has its own
+[README](blog/README.md). The rest of this file covers the social agent.
+
+---
+
+# Social Agent
 
 Lightweight social-media posting agent for **Home Advisor Locksmith**. Runs on a
 GitHub Actions cron, picks the next post from a curated content library,
