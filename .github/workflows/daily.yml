@@ -74,6 +74,7 @@ jobs:
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SERVICE_AREA: ${{ secrets.SERVICE_AREA }}
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
         run: |
           if [ "$DRY_RUN" = "true" ]; then
