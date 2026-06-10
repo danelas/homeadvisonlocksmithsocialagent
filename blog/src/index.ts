@@ -20,8 +20,9 @@ import type { PublishedRecord } from "./lib/types.ts";
 const DRY_RUN = process.argv.includes("--dry-run");
 const PRINT_NEXT = process.argv.includes("--print-next");
 
+import { SITE } from "./lib/site.ts";
+
 const PREVIEW_DIR = resolve(process.cwd(), "preview");
-const SITE = (process.env.SITE_URL ?? "https://www.homeadvisorlocksmith.com").replace(/\/+$/, "");
 
 async function main(): Promise<void> {
   console.log(`[blog] dry-run=${DRY_RUN} print-next=${PRINT_NEXT}`);

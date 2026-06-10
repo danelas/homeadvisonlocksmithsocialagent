@@ -8,9 +8,8 @@ import { resolve, dirname } from "node:path";
 import { mkdir, writeFile, copyFile, readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { renderBlogIndex } from "./render.ts";
+import { SITE } from "./site.ts";
 import type { PublishedRecord } from "./types.ts";
-
-const SITE = (process.env.SITE_URL ?? "https://www.homeadvisorlocksmith.com").replace(/\/+$/, "");
 
 // site/ lives at the repo root, one level up from blog/ (process.cwd()).
 const SITE_DIR = resolve(process.cwd(), "..", "site");

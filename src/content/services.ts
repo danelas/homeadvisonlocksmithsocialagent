@@ -21,7 +21,9 @@ export const BRAND = {
   area: process.env.SERVICE_AREA?.trim() || "Miami & Surrounding Areas",
   tagline: "Local · Reliable · Professional",
   promo: "LOCK25",
-  platforms: ["instagram", "facebook", "google_business"] as const,
+  // GBP-only for now. Add "instagram" / "facebook" here once those are
+  // connected on the upload-post profile (and set FACEBOOK_PAGE_ID for FB).
+  platforms: ["google_business"] as const,
 };
 
 const NO_TEXT =

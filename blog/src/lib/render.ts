@@ -2,8 +2,7 @@
 // pages that match the Home Advisor Locksmith site brand (shared /styles.css).
 
 import type { DraftedPost, PublishedRecord } from "./types.ts";
-
-const SITE = (process.env.SITE_URL ?? "https://www.homeadvisorlocksmith.com").replace(/\/+$/, "");
+import { SITE } from "./site.ts";
 const BRAND = "Home Advisor Locksmith";
 const PHONE_TEL = "+17867779529";
 const PHONE_DISPLAY = "(786) 777-9529";
