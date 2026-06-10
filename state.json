@@ -44,6 +44,51 @@
         },
         "request_id": "49945de99e5a44538cb51ae673a79653"
       }
+    },
+    {
+      "id": "keycard-fob-entry-001",
+      "at": "2026-06-10T23:34:18.508Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-10T23:34:12.693Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/21273269901610678",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEMTK5bP3lIf4-QE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 108405,
+            "post_title": "Keycard & Fob Entry Systems",
+            "post_caption": "Keycard and fob entry is the simplest way to give a team controlled access without keys floating around the neighborhood. Each employee gets a credential that works only on the doors you choose, during the hours you set.\r\n\r\nLose a card? It's deactivated in seconds — no lock changes, no risk that whoever found it can walk in. You also get a record of every entry, which is invaluable for offices, gyms, medical suites, and multi-tenant buildings where you need to know who came and went.\r\n\r\nWe install proximity cards, fobs, and mobile credentials, and tie them into door schedules and alarms. Ask us how a fob system compares to full networked access control for your space — we'll give you the honest trade-offs.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#keycardentry #fobentry #accesscontrol #commerciallocksmith #businesssecurity #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "81aa81301d8f4795b5f90c88d0ef3766",
+            "request_id_logs": "81aa81301d8f4795b5f90c88d0ef3766",
+            "job_id": "af71bb7a1bc6479ab2d72b2dd3e261b6",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-10T23:34:12.693Z"
+        },
+        "request_id": "81aa81301d8f4795b5f90c88d0ef3766"
+      }
     }
   ]
 }
