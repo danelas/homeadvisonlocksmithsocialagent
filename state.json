@@ -89,6 +89,51 @@
         },
         "request_id": "81aa81301d8f4795b5f90c88d0ef3766"
       }
+    },
+    {
+      "id": "master-key-002",
+      "at": "2026-06-11T15:03:58.791Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-11T15:03:52.977Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/3361197267592502836",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEIbElffs85PPOg",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 127583,
+            "post_title": "Master Key Systems",
+            "post_caption": "A master key system gives you a clean hierarchy of access: a master key that opens everything, sub-masters for managers or departments, and individual keys that open only one door. One ring instead of twenty — without giving everyone the run of the building.\r\n\r\nDone right, it's also about control. We can build your system on restricted keyways, so blanks aren't sold at the hardware store and copies can't be made without your authorization. When someone leaves, you rekey one cylinder, not the whole property.\r\n\r\nThis is the backbone of security for property managers, schools, medical offices, and retail in Miami. We design the keying chart, cut the keys, and document it so you always know who holds what. Let's map your doors and build it properly.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#masterkey #masterkeysystem #commerciallocksmith #businesssecurity #propertymanagement #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "d7cab5098ef54b438a62f26ef7974ba6",
+            "request_id_logs": "d7cab5098ef54b438a62f26ef7974ba6",
+            "job_id": "5485fd76e9ee4558bd98ba14b8c78250",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-11T15:03:52.977Z"
+        },
+        "request_id": "d7cab5098ef54b438a62f26ef7974ba6"
+      }
     }
   ]
 }
