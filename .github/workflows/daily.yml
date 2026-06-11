@@ -2,10 +2,14 @@ name: Daily Social Post
 
 on:
   schedule:
-    # 14:00 UTC = 10 AM EDT / 9 AM EST — one fresh service-ad flyer every day.
+    # Three service-ad flyers a day — morning / afternoon / evening:
+    # 13:50 UTC = 9:50 AM EDT, 17:50 = 1:50 PM, 22:50 = 6:50 PM (one hour earlier in EST).
+    # Staggered :50 so it doesn't post in the same minute as the other brand agents.
     # The agent rotates through the service catalog so each day covers a
     # different locksmith job (car keys, rekey, safes, smart locks, ...).
-    - cron: "0 14 * * *"
+    - cron: "50 13 * * *"
+    - cron: "50 17 * * *"
+    - cron: "50 22 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
