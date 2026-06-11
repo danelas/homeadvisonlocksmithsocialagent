@@ -16,6 +16,22 @@ function client(): OpenAI {
   return _client;
 }
 
+// gpt-image-1's safety system sometimes blocks service-trade scenes (e.g.
+// close-ups of tools on locks read as break-in imagery). The block happens at
+// the OUTPUT stage, so it's stochastic — the same prompt can pass one day and
+// fail the next. When that happens we retry once with this deliberately bland
+// background; every flyer composites its own text/logo on top of a dark scrim,
+// so a generic backdrop still produces a usable post instead of a dead run.
+const SAFE_FALLBACK_PROMPT =
+  "A clean, professional photograph of a modern commercial building entrance " +
+  "with glass doors in warm late-afternoon light, empty sidewalk, no people. " +
+  "Absolutely no text, letters, numbers, logos, or watermarks anywhere in the image.";
+
+function isModerationBlocked(err: unknown): boolean {
+  const e = err as { code?: string; error?: { code?: string } };
+  return e?.code === "moderation_blocked" || e?.error?.code === "moderation_blocked";
+}
+
 export async function generateImage(
   prompt: string,
   outFilename: string,
@@ -24,16 +40,32 @@ export async function generateImage(
   const outPath = resolve(PREVIEW_DIR, outFilename);
   await mkdir(dirname(outPath), { recursive: true });
 
+  let resp: OpenAI.Images.ImagesResponse;
   console.log(`[image] generating: "${prompt.slice(0, 100)}…" (${size})`);
-  const resp = await client().images.generate({
-    model: "gpt-image-1",
-    prompt,
-    size,
-    // "medium" costs ~4x less than the default (high) and the difference is
-    // invisible under the flyer's dark scrim + JPEG + GBP compression.
-    quality: "medium",
-    n: 1,
-  });
+  try {
+    resp = await client().images.generate({
+      model: "gpt-image-1",
+      prompt,
+      size,
+      // "medium" costs ~4x less than the default (high) and the difference is
+      // invisible under the flyer's dark scrim + JPEG + GBP compression.
+      quality: "medium",
+      n: 1,
+    });
+  } catch (err) {
+    if (!isModerationBlocked(err)) throw err;
+    console.warn(
+      `[image] prompt blocked by OpenAI moderation — retrying with the generic fallback background`
+    );
+    resp = await client().images.generate({
+      model: "gpt-image-1",
+      prompt: SAFE_FALLBACK_PROMPT,
+      size,
+      quality: "medium",
+      n: 1,
+    });
+  }
+
   const b64 = resp.data?.[0]?.b64_json;
   if (!b64) throw new Error("OpenAI did not return image bytes");
   const buf = Buffer.from(b64, "base64");
