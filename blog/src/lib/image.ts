@@ -24,6 +24,7 @@ export async function generateHeroImage(prompt: string, outFilename: string): Pr
     model: "gpt-image-1",
     prompt,
     size: "1536x1024",   // closest gpt-image-1 size to OG 1200x630 — we crop later
+    quality: "medium",   // ~4x cheaper than high; fine for a blog hero
     n: 1,
   });
   const b64 = resp.data?.[0]?.b64_json;
