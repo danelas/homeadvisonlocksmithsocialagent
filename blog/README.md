@@ -1,6 +1,6 @@
 # Home Advisor Locksmith — Blog Agent
 
-Daily AI blog generator. Each run drafts one SEO-optimized article via Claude,
+Twice-daily AI blog generator. Each run drafts one SEO-optimized article via Claude,
 generates a branded hero image via OpenAI, renders it to a static page, and
 writes it into the repo's [`site/`](../site) folder. The GitHub Actions
 workflow commits the new files and **Vercel (connected to this repo)
@@ -21,10 +21,10 @@ same repo.
 ## How it picks topics
 
 Walks [`src/lib/topics.ts`](src/lib/topics.ts) in order, publishing the first
-topic not yet in [`state.json`](state.json). ~30 starter topics ship across
+topic not yet in [`state.json`](state.json). ~60 topics ship across
 residential, automotive, commercial, smart-lock, security, and cost verticals —
-about a month of daily runway. Add more to the end of the array; never reorder
-or reuse an `id`.
+about a month of runway at two posts per day. Add more to the end of the
+array; never reorder or reuse an `id`.
 
 ## Quickstart
 
@@ -42,8 +42,8 @@ After `npm run post`, the new files are in `../site/blog/<slug>/`. Commit them
 
 ## Production (GitHub Actions)
 
-Runs daily at **9 AM ET** (cron `0 13 * * *`) via
-[`.github/workflows/blog-daily.yml`](../.github/workflows/blog-daily.yml).
+Runs twice daily at **9 AM and 5 PM ET** (crons `0 13 * * *` and `0 21 * * *`)
+via [`.github/workflows/blog-daily.yml`](../.github/workflows/blog-daily.yml).
 Required repo secrets:
 
 | Secret | Why |
@@ -52,7 +52,7 @@ Required repo secrets:
 | `OPENAI_API_KEY` | gpt-image-1 generates the hero |
 | `SITE_URL` | optional — defaults to `https://www.homeadvisorlocksmith.com` |
 
-Trigger manually from **Actions → Daily Blog Post → Run workflow** (set **Dry
+Trigger manually from **Actions → Blog Post (2x daily) → Run workflow** (set **Dry
 run = true** to draft without publishing — the article still uploads as a
 downloadable preview artifact).
 
