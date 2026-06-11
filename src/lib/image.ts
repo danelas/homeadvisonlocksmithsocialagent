@@ -29,6 +29,9 @@ export async function generateImage(
     model: "gpt-image-1",
     prompt,
     size,
+    // "medium" costs ~4x less than the default (high) and the difference is
+    // invisible under the flyer's dark scrim + JPEG + GBP compression.
+    quality: "medium",
     n: 1,
   });
   const b64 = resp.data?.[0]?.b64_json;
