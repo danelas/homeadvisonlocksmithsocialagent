@@ -269,6 +269,51 @@
         },
         "request_id": "de9e1ec5e5ce4518bf388d2a1835fcd8"
       }
+    },
+    {
+      "id": "electric-strikes-maglocks-006",
+      "at": "2026-06-12T18:27:46.702Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-12T18:27:40.791Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/7538599724833468236",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKENzWyqjFqojS3AE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 117606,
+            "post_title": "Electric Strikes & Mag Locks",
+            "post_caption": "Electric strikes and magnetic locks are what make a door buzz open from a desk or release for a valid badge. They're the muscle behind access control, intercom entry, and reception-controlled doors.\r\n\r\nThe details matter. A fail-secure strike stays locked if power is lost; a fail-safe mag lock releases so people can exit — and which one you need depends on the door, the code requirement, and whether it's on an exit path. Get it wrong and you either trap people in or leave a door unlocked during an outage. We also tie them into request-to-exit sensors, fire alarms, and door schedules so everything releases correctly in an emergency.\r\n\r\nWe spec, install, and troubleshoot electric strikes, mag locks, and the wiring behind them for Miami offices, lobbies, and retail. Let's make your entry doors smart and safe.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#maglock #electricstrike #accesscontrol #commerciallocksmith #businesssecurity #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "c796ef6e75ae4d698aa282ff4affb89d",
+            "request_id_logs": "c796ef6e75ae4d698aa282ff4affb89d",
+            "job_id": "29ff79318bc448dd9987cf262ff3e71b",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-12T18:27:40.791Z"
+        },
+        "request_id": "c796ef6e75ae4d698aa282ff4affb89d"
+      }
     }
   ]
 }
