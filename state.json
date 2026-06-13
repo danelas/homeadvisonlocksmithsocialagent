@@ -359,6 +359,51 @@
         },
         "request_id": "1cfb73c110b54416ae4ca3d3a0f59fcc"
       }
+    },
+    {
+      "id": "storefront-repair-008",
+      "at": "2026-06-13T14:34:40.783Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-13T14:34:35.160Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/1298998675772467405",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEOn3-seWl_72nQE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 132789,
+            "post_title": "Storefront Door Repairs",
+            "post_caption": "A storefront door is the hardest-working door you own — opened hundreds of times a day, exposed to sun and weather, and the first thing customers touch. When the pivots wear, the alignment drifts, or the lock stops catching, it quickly becomes a security gap and a bad first impression.\r\n\r\nWe repair and adjust aluminum storefront doors: pivot and hinge wear, dragging or sagging panels, misaligned latches, worn cylinders, and closers that slam or won't pull the door shut. The goal is a door that opens smoothly, latches every time, and actually locks when you flip the key at close.\r\n\r\nServing retail, restaurants, and offices across Miami. If your front door is fighting you, we'll get it back to opening and locking the way it should.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#storefrontdoor #commerciallocksmith #doorrepair #commercialdoorhardware #businesssecurity #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "8426428d8d684936baacc28e95b209b9",
+            "request_id_logs": "8426428d8d684936baacc28e95b209b9",
+            "job_id": "8ecf3859d8bb403ab9a04245dc63e42a",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-13T14:34:35.160Z"
+        },
+        "request_id": "8426428d8d684936baacc28e95b209b9"
+      }
     }
   ]
 }
