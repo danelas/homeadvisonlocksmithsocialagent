@@ -404,6 +404,51 @@
         },
         "request_id": "8426428d8d684936baacc28e95b209b9"
       }
+    },
+    {
+      "id": "door-closers-009",
+      "at": "2026-06-13T18:15:00.845Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-13T18:14:55.097Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/35326887219825738",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEJeRw-G95pC-vAE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 109551,
+            "post_title": "Commercial Door Closers",
+            "post_caption": "A door closer is the quiet device at the top of the door that decides whether your door actually closes and latches — or drifts open and leaves you unsecured. When it fails, doors slam, stay propped, or stop just short of latching, which defeats every lock and access reader behind it.\r\n\r\nProper adjustment also matters for accessibility and safety: closing speed, latch speed, and opening force all have to be set within range so the door is easy to open but still self-closes and latches. On fire-rated doors, a working closer is a code requirement, not a nicety.\r\n\r\nWe adjust, rebuild, and replace commercial door closers on offices, stores, and multi-tenant buildings in Miami. If your doors slam or won't latch, we'll dial them in.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#doorcloser #commerciallocksmith #commercialdoorhardware #doorrepair #businesssecurity #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "48767af96e794070a45f15018b2d4b7a",
+            "request_id_logs": "48767af96e794070a45f15018b2d4b7a",
+            "job_id": "d4cdb1bd5a7443efb42a3c02739ba623",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-13T18:14:55.097Z"
+        },
+        "request_id": "48767af96e794070a45f15018b2d4b7a"
+      }
     }
   ]
 }
