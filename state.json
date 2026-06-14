@@ -494,6 +494,51 @@
         },
         "request_id": "d45b6f5ac96e464e97c91654de9d4ad0"
       }
+    },
+    {
+      "id": "commercial-lockout-011",
+      "at": "2026-06-14T14:36:11.412Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-14T14:36:05.526Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/4419566246164240863",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEM7D2LqJ7vP4XA",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 119799,
+            "post_title": "Business Lockouts",
+            "post_caption": "Locked out of your business is more than an inconvenience — every minute the door stays shut is lost sales, idle staff, and missed appointments. The reflex to jimmy the door or break the glass almost always costs more than the lockout and leaves you unsecured on top of it.\r\n\r\nWe open commercial doors — storefronts, offices, suites, and back-of-house — cleanly and without damage, and we verify you're authorized to be there first. While we're on-site, if a worn or failing lock caused the lockout, we can repair or rekey it so it doesn't strand you again tomorrow.\r\n\r\nWe're mobile across Miami and respond fast so you can open on time. Locked out of your business right now? Call and we'll get you back in.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#commerciallockout #businesslockout #commerciallocksmith #emergencylocksmith #247locksmith #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "91a98fe33746430a9df0ba1e74601036",
+            "request_id_logs": "91a98fe33746430a9df0ba1e74601036",
+            "job_id": "f1d03ded0b444f4e8b782bf1ec612052",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-14T14:36:05.526Z"
+        },
+        "request_id": "91a98fe33746430a9df0ba1e74601036"
+      }
     }
   ]
 }
