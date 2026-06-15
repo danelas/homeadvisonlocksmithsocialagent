@@ -719,6 +719,51 @@
         },
         "request_id": "4d024a9c2c5c468cb4c87e57eeac96f6"
       }
+    },
+    {
+      "id": "keycard-fob-entry-016",
+      "at": "2026-06-15T23:25:18.137Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-15T23:25:12.270Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/1240598929655121029",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKELK_wrmq7vCITQ",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 114263,
+            "post_title": "Keycard & Fob Entry Systems",
+            "post_caption": "Keycard and fob entry is the simplest way to give a team controlled access without keys floating around the neighborhood. Each employee gets a credential that works only on the doors you choose, during the hours you set.\r\n\r\nLose a card? It's deactivated in seconds — no lock changes, no risk that whoever found it can walk in. You also get a record of every entry, which is invaluable for offices, gyms, medical suites, and multi-tenant buildings where you need to know who came and went.\r\n\r\nWe install proximity cards, fobs, and mobile credentials, and tie them into door schedules and alarms. Ask us how a fob system compares to full networked access control for your space — we'll give you the honest trade-offs.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#keycardentry #fobentry #accesscontrol #commerciallocksmith #businesssecurity #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "562018f98c8844de8120120611936494",
+            "request_id_logs": "562018f98c8844de8120120611936494",
+            "job_id": "1ef0667278ba420aaede465ace9aba27",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-15T23:25:12.270Z"
+        },
+        "request_id": "562018f98c8844de8120120611936494"
+      }
     }
   ]
 }
