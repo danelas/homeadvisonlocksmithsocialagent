@@ -674,6 +674,51 @@
         },
         "request_id": "e9120ad03d5d47ae98804f805e87af31"
       }
+    },
+    {
+      "id": "access-control-015",
+      "at": "2026-06-15T19:09:37.640Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-15T19:09:31.708Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/1148575901565482233",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEMXO0erfyNDQ-QE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 107408,
+            "post_title": "Access Control Systems",
+            "post_caption": "Still handing out brass keys to your building? Access control swaps them for credentials you actually manage. Add or remove a person's access in seconds, set automatic door schedules (unlock at 8 AM, lock at 6 PM), and pull an audit trail that shows exactly who opened which door and when.\r\n\r\nFor Miami offices, warehouses, and multi-tenant properties, that ends the costly cycle of rekeying every time someone leaves — you simply deactivate their card or mobile credential. Systems range from a single standalone keypad to fully networked, cloud-managed access with remote lockdown across every door.\r\n\r\nWe assess your doors, recommend the right architecture (wired or wireless, on-prem or cloud), and install and support it. Book a walkthrough and we'll map out a plan built around how your business actually moves.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#accesscontrol #commerciallocksmith #businesssecurity #accesscontrolsystems #miamilocksmith #commercialsecurity",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "4d024a9c2c5c468cb4c87e57eeac96f6",
+            "request_id_logs": "4d024a9c2c5c468cb4c87e57eeac96f6",
+            "job_id": "9c5a0ce4c99a45eea72de967629e393f",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-15T19:09:31.708Z"
+        },
+        "request_id": "4d024a9c2c5c468cb4c87e57eeac96f6"
+      }
     }
   ]
 }
