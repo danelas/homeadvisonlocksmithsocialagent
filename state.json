@@ -989,6 +989,51 @@
         },
         "request_id": "3aa2a2ace6ee44159c2f3a371b8233c6"
       }
+    },
+    {
+      "id": "residential-lockout-022",
+      "at": "2026-06-17T23:18:42.934Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-17T23:18:37.107Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/8406042299531741865",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEM6cr93opOnW6AE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 116079,
+            "post_title": "Locked Out Of Your Home?",
+            "post_caption": "Locked out of your house? Take a breath — this is one of the most common calls we get, and forcing it is the worst move. Prying a door or kicking it in usually costs far more than the lockout itself, between a cracked jamb, a bent door, and a lock you'll now have to replace.\r\n\r\nWe open most residential locks cleanly, with no damage, and we can cut you a spare on the spot so a single lost key never strands you again. If your lock is old or worn, we'll tell you honestly whether it's worth rekeying or upgrading while we're there.\r\n\r\nWe're mobile and available around the clock across Miami — nights, weekends, and holidays included. Don't risk your door; let us get you in the right way.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#lockedout #houselockout #residentiallocksmith #emergencylocksmith #247locksmith #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "0c9b52d4ded74ef3aae2b93c9e6b4487",
+            "request_id_logs": "0c9b52d4ded74ef3aae2b93c9e6b4487",
+            "job_id": "249fb3e9f9f54afa9c7340a88efa55fb",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-17T23:18:37.107Z"
+        },
+        "request_id": "0c9b52d4ded74ef3aae2b93c9e6b4487"
+      }
     }
   ]
 }
