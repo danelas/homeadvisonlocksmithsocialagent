@@ -1304,6 +1304,51 @@
         },
         "request_id": "53facc70812c4c2199214dd7f2e27f54"
       }
+    },
+    {
+      "id": "lost-car-keys-029",
+      "at": "2026-06-20T14:36:24.039Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-20T14:36:18.327Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/2898489619262603507",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKELr57p_GtOOFtAE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 105037,
+            "post_title": "Lost Car Keys & Programming",
+            "post_caption": "Lost the only key to your car? You don't have to tow it to the dealer and wait days. Most modern keys are transponder or smart keys with a chip that has to be programmed to your specific vehicle — and that's work a properly equipped mobile locksmith does right in your driveway.\r\n\r\nWe cut and program transponder keys, remote head keys, and push-to-start smart fobs for most makes and models, usually for less than dealership pricing. It's also smart to make a spare before you're stranded — a backup key is a fraction of the cost and stress of an all-keys-lost situation.\r\n\r\nWe come to your home, office, or wherever the car is parked across Miami. Lost your keys or want a spare made? We'll get you driving again.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#lostcarkeys #carkeyreplacement #keyprogramming #transponderkey #automotivelocksmith #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "994a5bc1da90479987cc006e8b9abd5e",
+            "request_id_logs": "994a5bc1da90479987cc006e8b9abd5e",
+            "job_id": "b0b1657adf1349b1ad1db557932af50d",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-20T14:36:18.327Z"
+        },
+        "request_id": "994a5bc1da90479987cc006e8b9abd5e"
+      }
     }
   ]
 }
