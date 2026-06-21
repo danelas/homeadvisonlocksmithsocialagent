@@ -1529,6 +1529,51 @@
         },
         "request_id": "b0818a5f9a8d42178887bba0f4937da8"
       }
+    },
+    {
+      "id": "commercial-rekey-034",
+      "at": "2026-06-21T23:17:01.139Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-21T23:16:55.627Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/4354807709990158646",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEJynoryh0IKmiAE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 133895,
+            "post_title": "Commercial Lock Changes & Rekeys",
+            "post_caption": "Whenever people change, your access should too. New tenant taking over a suite, an employee let go, a contractor who had a key during a build-out — any of these is a reason to rekey before it becomes a problem.\r\n\r\nRekeying re-pins your existing commercial locks so every old key stops working, while keeping the hardware you already paid for. We can key multiple doors alike so one key runs the whole space, or keep them separate for tighter control. When a lock is worn or you're upgrading security grade, we'll replace it with commercial-rated hardware instead.\r\n\r\nFor Miami businesses and property managers, we handle same-day changes so a turnover never leaves your space exposed overnight. Tell us how many doors and we'll get it locked down.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#commerciallocksmith #rekey #lockchange #businesssecurity #propertymanagement #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "788d34b00d844db5b4597059d03c1130",
+            "request_id_logs": "788d34b00d844db5b4597059d03c1130",
+            "job_id": "0e14ba13ebe5480e828b04683d2d40de",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-21T23:16:55.627Z"
+        },
+        "request_id": "788d34b00d844db5b4597059d03c1130"
+      }
     }
   ]
 }
