@@ -1709,6 +1709,51 @@
         },
         "request_id": "91d40701e51249259c15fb52c6fd0d40"
       }
+    },
+    {
+      "id": "storefront-repair-038",
+      "at": "2026-06-23T14:48:11.630Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-23T14:48:05.581Z"
+            },
+            "success": false,
+            "platform_post_id": null,
+            "post_url": null,
+            "error_message": "Google Business API error (500): Internal error encountered. If this issue persists, please contact support at info@upload-post.com. Learn more: https://docs.upload-post.com/resources/common-errors.",
+            "error_signature": "b40ccd3d29152cb8",
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 115719,
+            "post_title": "Storefront Door Repairs",
+            "post_caption": "A storefront door is the hardest-working door you own — opened hundreds of times a day, exposed to sun and weather, and the first thing customers touch. When the pivots wear, the alignment drifts, or the lock stops catching, it quickly becomes a security gap and a bad first impression.\r\n\r\nWe repair and adjust aluminum storefront doors: pivot and hinge wear, dragging or sagging panels, misaligned latches, worn cylinders, and closers that slam or won't pull the door shut. The goal is a door that opens smoothly, latches every time, and actually locks when you flip the key at close.\r\n\r\nServing retail, restaurants, and offices across Miami. If your front door is fighting you, we'll get it back to opening and locking the way it should.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#storefrontdoor #commerciallocksmith #doorrepair #commercialdoorhardware #businesssecurity #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "674beb5cf0de452991fe21d35e9b32f4",
+            "request_id_logs": "674beb5cf0de452991fe21d35e9b32f4",
+            "job_id": "2d7853f098ab407bb4aaca8dd8c36ffb",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-23T14:48:05.581Z"
+        },
+        "request_id": "674beb5cf0de452991fe21d35e9b32f4"
+      }
     }
   ]
 }
