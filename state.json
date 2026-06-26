@@ -2159,6 +2159,51 @@
         },
         "request_id": "9e3874f435b64ff994e57d405b226198"
       }
+    },
+    {
+      "id": "car-lockout-048",
+      "at": "2026-06-26T18:18:57.704Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-26T18:18:51.955Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/4846016174387746007",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEK_3j6GHvqPRlgE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 114036,
+            "post_title": "Car Lockouts",
+            "post_caption": "Keys locked in the car? Skip the coat hanger and the YouTube tutorial — modern doors hide airbags, sensors, and side-impact bars exactly where people try to pry, and one slip means a bent frame or scratched paint.\r\n\r\nWe carry professional lockout tools that open the door clean, the way it's meant to open, on most cars, SUVs, and trucks — push-to-start or traditional keys. We come to you, whether you're in a driveway, a parking garage, or stranded in a lot, and we verify it's your vehicle before we touch it.\r\n\r\nLocked out right now? Don't force it — call and we'll get you back in safely.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#carlockout #lockedout #emergencylocksmith #247locksmith #automotivelocksmith #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "fffec07af2164bee82fc7dc85c4230b2",
+            "request_id_logs": "fffec07af2164bee82fc7dc85c4230b2",
+            "job_id": "adec37c31b09460889287de87267aba6",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-26T18:18:51.955Z"
+        },
+        "request_id": "fffec07af2164bee82fc7dc85c4230b2"
+      }
     }
   ]
 }
