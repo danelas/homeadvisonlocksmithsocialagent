@@ -2249,6 +2249,51 @@
         },
         "request_id": "6a6f99983b304ec5a72503a9215ed258"
       }
+    },
+    {
+      "id": "panic-bars-050",
+      "at": "2026-06-27T14:20:25.014Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-27T14:20:19.334Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/4804333656530299979",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEPmH1b-w9O3MQg",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 102901,
+            "post_title": "Panic Bars & Exit Devices",
+            "post_caption": "Panic bars (exit devices) let anyone leave instantly in an emergency with a single push — while still keeping the door locked from the outside. For most commercial buildings they're not optional; they're tied to fire and life-safety code, and inspectors look for them on required exits.\r\n\r\nA bar that sticks, rattles, or doesn't latch isn't just annoying — it's a liability and a failed inspection waiting to happen. We install, adjust, and repair panic hardware, and pair it with the right strikes, closers, and alarms so the door is secure and compliant at the same time.\r\n\r\nIf you run a store, restaurant, office, or warehouse in Miami and you're not sure your exits meet code, we'll inspect them and tell you straight what needs attention.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#panicbar #exitdevice #commerciallocksmith #commercialdoorhardware #businesssecurity #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "c14935694ea84518976d5f32e3640963",
+            "request_id_logs": "c14935694ea84518976d5f32e3640963",
+            "job_id": "5a4ad0d22dc440fd9ad421c70fc7927a",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-27T14:20:19.334Z"
+        },
+        "request_id": "c14935694ea84518976d5f32e3640963"
+      }
     }
   ]
 }
