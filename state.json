@@ -2474,6 +2474,51 @@
         },
         "request_id": "1bd55e455f65443e9acc827eee50dc80"
       }
+    },
+    {
+      "id": "retail-office-security-055",
+      "at": "2026-06-28T23:14:28.882Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-28T23:14:22.985Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/4792933330207863838",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEIDl84Plrb7MwAE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 144361,
+            "post_title": "Retail & Office Security Upgrades",
+            "post_caption": "Most commercial break-ins aren't sophisticated — they exploit a weak strike, a builder-grade lock, or a door that never latched right. A security upgrade closes those gaps before they cost you inventory, a deductible, and downtime.\r\n\r\nWe assess your space and harden the weak points: high-security and ANSI Grade-1 locks, reinforced strike plates and door frames, restricted master keys that can't be copied off the street, and access control so you control and log every entry. For retail we add the layers that matter for shrink and after-hours security; for offices we focus on controlled access and clean audit trails.\r\n\r\nThink of it as a security tune-up for your business. We'll walk your Miami location, point out the realistic risks, and prioritize the fixes that give you the most protection first.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#commerciallocksmith #businesssecurity #retailsecurity #officesecurity #accesscontrol #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "14bada87bb954bd89d900ef6d3e851fc",
+            "request_id_logs": "14bada87bb954bd89d900ef6d3e851fc",
+            "job_id": "cb2e3d38031042908419629e1558ad88",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-28T23:14:22.985Z"
+        },
+        "request_id": "14bada87bb954bd89d900ef6d3e851fc"
+      }
     }
   ]
 }
