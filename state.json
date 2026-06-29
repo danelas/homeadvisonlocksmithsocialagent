@@ -2564,6 +2564,51 @@
         },
         "request_id": "0d899b25e8d04f7792606e0541d062fe"
       }
+    },
+    {
+      "id": "commercial-hardware-057",
+      "at": "2026-06-29T18:30:08.546Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-29T18:30:03.733Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/1771774361756639281",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEKmi9_vwhN-k7AE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 115437,
+            "post_title": "Commercial Door Hardware",
+            "post_caption": "Commercial doors live a hard life, and residential-grade parts don't survive it. The right hardware — ANSI Grade-1 mortise locks, commercial levers, continuous hinges, exit devices, and closers — is built for thousands of cycles and for the code requirements your building has to meet.\r\n\r\nWe install and repair the full stack: lever handles and lock bodies, deadbolts and electric locks, hinges and pivots, closers, strikes, and exit hardware. Where accessibility or fire-rating applies, we make sure the door operates within ADA force and self-closes and latches as required.\r\n\r\nWhether you're outfitting a new build-out, replacing a failed lockset, or standardizing hardware across a Miami property, we'll spec parts that fit the door and the use — and won't be back on a service call in six months.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#commercialdoorhardware #commerciallocksmith #doorhardware #businesssecurity #propertymanagement #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "de3e7d44594f4fc3bd03aec15eee3805",
+            "request_id_logs": "de3e7d44594f4fc3bd03aec15eee3805",
+            "job_id": "18e7ec2b8fbd48de8ab36450eb467456",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-29T18:30:03.733Z"
+        },
+        "request_id": "de3e7d44594f4fc3bd03aec15eee3805"
+      }
     }
   ]
 }
