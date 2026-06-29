@@ -2609,6 +2609,51 @@
         },
         "request_id": "de3e7d44594f4fc3bd03aec15eee3805"
       }
+    },
+    {
+      "id": "property-management-058",
+      "at": "2026-06-29T23:13:14.187Z",
+      "result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "clothingworldllc@gmail.com",
+            "profile_username": "homeadvisor",
+            "platform": "google_business",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-06-29T23:13:08.422Z"
+            },
+            "success": true,
+            "platform_post_id": "accounts/109197818660398714741/locations/14159554464061444271/localPosts/3716777866305612234",
+            "post_url": "https://local.google.com/place?id=16880447216324409022&use=posts&lpsid=CIHM0ogKEJfv-7iR5uDLlwE",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 127119,
+            "post_title": "Property Mgmt Security",
+            "post_caption": "Managing properties means managing keys and access at scale — and that's exactly where most security problems hide. Old tenant keys never returned, vendors with copies, no record of who can open what, and a frantic rekey every time a unit turns over.\r\n\r\nWe work with property managers and business owners as a single security partner across the portfolio: fast turnover rekeys between tenants, a planned master key system so your team holds one key instead of a bucket of them, restricted keys that can't be duplicated off-site, and access control that logs entries and lets you grant or cut access remotely.\r\n\r\nFrom a single building to a whole Miami portfolio, we'll standardize your hardware, document your keying, and be the number you call when a door, lock, or access issue comes up. Let's set up a plan that scales with you.\r\n\r\n📞 (786) 777-9529 · FREE service call with any job — mention LOCK25\r\n\r\n#propertymanagement #commerciallocksmith #businesssecurity #accesscontrol #masterkey #miamilocksmith",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "1c782ef0d67f4771a34f7483d4a57b4e",
+            "request_id_logs": "1c782ef0d67f4771a34f7483d4a57b4e",
+            "job_id": "4a9f5dfcb201457589b0e7336d8a6b6a",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-06-29T23:13:08.422Z"
+        },
+        "request_id": "1c782ef0d67f4771a34f7483d4a57b4e"
+      }
     }
   ]
 }
